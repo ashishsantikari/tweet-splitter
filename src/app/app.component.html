@@ -1,7 +1,8 @@
 <div class="container">
   <div class="row header">
     <div class="col">
-      <i class="fa fa-2x fa-twitter-square"></i>&nbsp;&nbsp;<span class="h3">Twitter Splitter</span>
+      <i class="fa fa-2x fa-twitter-square"></i>&nbsp;&nbsp;
+      <span class="h3">Twitter Splitter</span>
     </div>
   </div>
   <div class="row gutter">
@@ -9,12 +10,20 @@
       <input type="text" #tweet class="form-control" placeholder="What's happening">
     </div>
     <div class="col-2">
-      <button type="button" class="btn btn-primary" (click)="submitTweet(tweet.value)"><i class="fa fa-twitter"></i>&nbsp;Tweet</button>
+      <button type="button" class="btn btn-primary" (click)="submitTweet(tweet.value)">
+        <i class="fa fa-twitter"></i>&nbsp;Tweet</button>
     </div>
   </div>
   <div class="row">
-    <div class="col" >
-        <li *ngFor="let result of results"><span class="h4">{{result}}</span></li>
+    <div class="col-12">
+      <div class="col alert alert-danger" role="alert" *ngIf="error">
+        {{error}}
+      </div>
+    </div>
+    <div class="col-12">
+      <li *ngFor="let result of results">
+        <span class="h4">{{result}}</span>
+      </li>
     </div>
   </div>
 </div>
