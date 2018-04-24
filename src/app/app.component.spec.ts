@@ -54,4 +54,17 @@ describe('AppComponent', () => {
     const error : Error = new Error('message cannot be splitted');
     expect(function(){app.splitString(input)}).toThrow();
   })
+
+  it('should split strings', function(){
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    const input = "hi i am ashish santikari and i would like to tell you all about myself that i am good in typescript coding along with angularjs and yes now i am playing with lorem ipsum.";
+    const output = [
+      '1/4 hi i am ashish santikari and i would like to',
+      '2/4 tell you all about myself that i am good in',
+      '3/4 typescript coding along with angularjs and',
+      '4/4 yes now i am playing with lorem ipsum.'
+    ]
+    expect(app.splitString(input)).toEqual(output);
+  })
 });

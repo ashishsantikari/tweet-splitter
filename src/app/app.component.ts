@@ -58,7 +58,8 @@ export class AppComponent {
 
 		//variables to keep track of the string creation
 		let split_start: number = 0;
-		let split_end: number;
+		let tmp_end: number;
+		let split_end : number;
 		let track_indicator: number = 1;
 		let splits: number = 0;
 		let remaining_content_length: number = total_content_length;
@@ -69,11 +70,12 @@ export class AppComponent {
 				response.push(indicator_text + str.substring(split_start));
 			} else {
 				let split_point = this.TWEET_SIZE - indicator_text.length;
-				let tweet_text = str.substring(split_start, split_point);
-				let split_end = tweet_text.lastIndexOf(' ');
-				if (split_end === -1) {
+				let tweet_text = str.substring(split_start, split_start + split_point);
+				tmp_end = tweet_text.lastIndexOf(' ');
+				if (tmp_end === -1) {
 					throw new Error('MESSGAE_NOT_SPLITTED'); //if no whitespace found, throw error
 				}
+				split_end = split_start + tmp_end;
 				response.push(indicator_text + str.substring(split_start, split_end));
 				split_start = split_end + 1;
 
