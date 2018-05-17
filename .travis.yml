@@ -5,12 +5,12 @@ language: node_js
 node_js:
   - "8"
   
-# addons:
-# apt:
-#   sources:
-#     - google-chrome
-#   packages:
-#     - google-chrome-stable
+  addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
 
 cache:
   directories:
@@ -21,6 +21,6 @@ install:
 
 script:
   # Use Chromium instead of Chrome.
-  # - export CHROME_BIN=chromium-browser
+  - export CHROME_BIN=chromium-browser
   - xvfb-run -a npm run test -- --single-run
   # - xvfb-run -a npm run e2e -- --no-progress --config=protractor-ci.conf.js
