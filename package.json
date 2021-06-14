@@ -27,7 +27,7 @@
     "zone.js": "0.8.26"
   },
   "devDependencies": {
-    "@angular/cli": "1.7.4",
+    "@angular/cli": "12.0.4",
     "@angular/compiler-cli": "8.2.4",
     "@angular/language-service": "8.2.4",
     "@compodoc/compodoc": "1.1.2",
