@@ -22,7 +22,7 @@
     "@angular/platform-browser": "8.2.4",
     "@angular/platform-browser-dynamic": "8.2.4",
     "@angular/router": "8.2.4",
-    "core-js": "2.5.5",
+    "core-js": "2.6.12",
     "rxjs": "5.5.10",
     "zone.js": "0.8.26"
   },
